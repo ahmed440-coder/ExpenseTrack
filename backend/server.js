@@ -28,8 +28,17 @@ app.use("/api/v1/expense", expenseRoutes)
 app.use("/api/v1/dashboard", dashboardRoutes)
 
 
-//server uploads folder
+
 app.use("/uploads",express.static(path.join(__dirname,"uploads")))
+
+
+app.use(express.static(path.join(__dirname, "../frontend/dist")));
+
+
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../frontend/dist", "index.html"));
+});
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, ()=>{
     console.log(`server is starting on port ${PORT}`)
