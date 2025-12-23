@@ -4,7 +4,7 @@ import Expense from './pages/dashboard/Expense'
 import Income from './pages/dashboard/Income'
 import Login from './pages/auth/Login'
 import Signup from './pages/auth/Signup'
-import { HashRouter as Router, Routes, Route, Navigate} from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom'
 import {Toaster} from 'react-hot-toast';
 import UserProvider from './context/UserContext'
 import { useEffect } from 'react';
