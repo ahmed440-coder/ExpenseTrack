@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+@layer base {
+    :root {
+        --color-background: #F0F0F0;
+        --color-card: #FFFFFF;
+        --color-text-primary: #22223B;
+        --color-text-secondary: #4A4E69;
+        --color-border: #E2E8F0;
+        --color-divider: #CBD5E1;
+        --color-chart-1: #27374D;
+        --color-chart-2: #526D82;
+        --color-chart-3: #9DB2BF;
+        --color-chart-4: #DDE6ED;
+    }
+
+    .dark {
+        --color-background: #13152a;
+        --color-card: #161b2e;
+        --color-text-primary: #E4E4E4;
+        --color-text-secondary: #E0E0E0;
+        --color-border: #1e3447;
+        --color-divider: #23223d;
+        --color-chart-1: #3e2248;
+        --color-chart-2: #5b3f64;
+        --color-chart-3: #93799a;
+        --color-chart-4: #ccb3d1;
+    }
+
+    html {
+        font-family: "Montserrat", sans-serif;
+    }
+
+    body {
+        @apply bg-[var(--color-background)] text-[var(--color-text-primary)] transition-colors duration-300;
+        overflow-x: hidden;
+    }
+}
+
+@theme {
+    --font-display: "Montserrat", sans-serif;
+    --color-primary: var(--color-text-primary);
+    --color-secondary: var(--color-text-secondary);
+    --color-bg-base: var(--color-background);
+    --color-card-base: var(--color-card);
+}
+
+.input-box {
+    @apply w-full flex items-center gap-3 text-sm bg-[var(--color-card)] rounded-lg px-4 py-3 mb-3 shadow-sm outline-none transition-all;
+}
+
+.input-box:focus-within {
+    @apply border-[#4A4E69] ring-2 ring-[#4A4E69]/20;
+}
+
+.btn-primary {
+    @apply w-full text-sm font-medium text-white bg-[#4A4E69] p-3 rounded-lg my-2 cursor-pointer transition-all hover:bg-[#22223B] active:scale-[0.98];
+}
+
+.card {
+    @apply bg-[var(--color-card)] p-6 rounded-2xl shadow-md transition-colors duration-300;
+}
+
+.card-btn {
+    @apply flex items-center gap-2 text-xs font-medium text-[var(--color-text-primary)] hover:text-[var(--color-chart-4)] bg-[var(--color-background)] hover:bg-[var(--color-chart-1)] px-4 py-2 rounded-lg cursor-pointer transition-all;
+}
+
+.add-btn {
+    @apply flex items-center gap-1.5 text-xs font-medium text-[#4A4E69] bg-[var(--color-background)] rounded-lg px-4 py-2 cursor-pointer transition-all hover:bg-[#4A4E69] hover:text-white;
+}
+
+.add-btn-fill {
+    @apply text-white bg-[#4A4E69] hover:bg-[#22223B] shadow-md;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.4; }
+}
