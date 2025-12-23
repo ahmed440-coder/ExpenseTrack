@@ -4,7 +4,7 @@ import Expense from './pages/dashboard/Expense'
 import Income from './pages/dashboard/Income'
 import Login from './pages/auth/Login'
 import Signup from './pages/auth/Signup'
-import { BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom'
+import { HashRouter as Router, Routes, Route, Navigate} from 'react-router-dom'
 import {Toaster} from 'react-hot-toast';
 import UserProvider from './context/UserContext'
 import { useEffect } from 'react';
@@ -22,11 +22,11 @@ const App = () => {
       <Router>
         <Routes>
           <Route path="/" element={<Root />} />
-          <Route path="/login" exact element={<Login />} />
-          <Route path="/signup" exact element={<Signup />} />
-          <Route path="/dashboard" exact element={<Home />} />
-          <Route path="/expense" exact element={<Expense />} />
-          <Route path="/income" exact element={<Income />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/dashboard" element={<Home />} />
+          <Route path="/expense" element={<Expense />} />
+          <Route path="/income" element={<Income />} />
         </Routes>
       </Router>
     </div>
