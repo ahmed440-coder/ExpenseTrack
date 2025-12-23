@@ -34,7 +34,12 @@ app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
 
 app.get(/.*/, (req, res) => {
-    res.sendFile(path.join(__dirname, "../frontend/dist", "index.html"));
+    const indexPath = path.join(__dirname, "../frontend/dist", "index.html");
+    if (!require('fs').existsSync(indexPath)) {
+        console.error("Frontend build not found at:", indexPath);
+        return res.status(404).send("Frontend build not found. Please run 'npm run build' in the frontend directory.");
+    }
+    res.sendFile(indexPath);
 });
 
 const PORT = process.env.PORT || 5000;
