@@ -9,6 +9,10 @@ const expenseRoutes = require('./routes/expenseRoutes')
 const dashboardRoutes = require('./routes/dashboardRoutes')
 const app = express()
 
+// Trust proxy for Render/Heroku SSL termination
+app.set("trust proxy", 1);
+
+
 app.use(cors(
     {
         origin: process.env.CLIENT_URL || "*",
