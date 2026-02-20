@@ -14,7 +14,7 @@ A full-stack web application to manage your expenses/income. You can insert your
 ## How to Set Up
 ### 1. Clone the repo
 ```bash
-git clone <your-repo-url>
+git clone <repo-url>
 cd expense-tracker
 ```
 ### 2. Backend Setup
